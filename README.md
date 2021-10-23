@@ -11,7 +11,7 @@ Put specdown on the path
 
 ## Example usage
 
-### Checking all markdown files
+### Installing the latest version
 
 ``` yaml
   lint-markdown:
