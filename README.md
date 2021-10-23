@@ -1,12 +1,13 @@
-# Setup Specdown 
+# Setup Specdown
 
-Put specdown on the path 
+Put specdown on the path
 
 ## Inputs
 
 ### `version`
 
-**Optional** Version to install, for example `0.55.5`. Default `"latest"`.
+**Optional** Version to install, for example `0.55.5`. Default
+`"latest"`.
 
 ## Example usage
 
