@@ -1,6 +1,6 @@
 # Setup Specdown
 
-Put specdown on the path
+Setup Specdown in your github action
 
 ## Inputs
 
@@ -14,11 +14,12 @@ Put specdown on the path
 ### Installing the latest version
 
 ``` yaml
-  lint-markdown:
+  specdown:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - uses: PurpleBooth/setup-specdown-action@v0.1.0
+    - run: specdown run README.md
 ```
 
 ## More information
