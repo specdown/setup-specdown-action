@@ -1,0 +1,45 @@
+name: Setup Specdown Action
+description: Setup the Specdown on the path
+inputs:
+  version:
+    description: Version of specdown to install
+    required: false
+    default: 'latest'
+
+runs:
+  using: composite
+  steps:
+    - name: Install Specdown
+      env:
+        SPECDOWN_VERSION: ${{ inputs.version }}
+      run: |
+        set -euo pipefail
+        
+        if [ "$SPECDOWN_VERSION" == "latest" ]; then
+            SPECDOWN_URL="https://github.com/specdown/specdown/releases/latest/download/"
+        else
+            SPECDOWN_URL="https://github.com/specdown/specdown/releases/download/$SPECDOWN_VERSION/"
+        fi
+        
+        if [ "$RUNNER_OS" == "Linux" ]; then
+             SPECDOWN_URL="$SPECDOWN_URL/specdown-x86_64-unknown-linux-gnu"
+             BINARY_SUFFIX=""
+        elif [ "$RUNNER_OS" == "Windows" ]; then
+             SPECDOWN_URL="$SPECDOWN_URL/specdown-x86_64-pc-windows-msvc.exe"
+             BINARY_SUFFIX=".exe"
+        elif [ "$RUNNER_OS" == "macOS" ]; then
+             SPECDOWN_URL="$SPECDOWN_URL/specdown-x86_64-apple-darwin"
+             BINARY_SUFFIX=""
+        else
+             echo "$RUNNER_OS not supported"
+             exit 1
+        fi
+        
+        mkdir -p "$RUNNER_TEMP/specdown-bin"
+        curl -Lo "$RUNNER_TEMP/specdown-bin/specdown$SPECDOWN_SUFFIX" "$SPECDOWN_URL"
+        chmod +x "$RUNNER_TEMP/specdown-bin/specdown"
+        echo "$GITHUB_WORKSPACE/target/assorted/bin" >> "$GITHUB_PATH"
+      shell: bash
+branding:
+  icon: check-circle
+  color: yellow
