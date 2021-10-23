@@ -18,7 +18,7 @@ runs:
         if [ "$SPECDOWN_VERSION" == "latest" ]; then
             SPECDOWN_URL="https://github.com/specdown/specdown/releases/latest/download/"
         else
-            SPECDOWN_URL="https://github.com/specdown/specdown/releases/download/$SPECDOWN_VERSION/"
+            SPECDOWN_URL="https://github.com/specdown/specdown/releases/download/v$SPECDOWN_VERSION/"
         fi
         
         if [ "$RUNNER_OS" == "Linux" ]; then
@@ -36,9 +36,9 @@ runs:
         fi
         
         mkdir -p "$RUNNER_TEMP/specdown-bin"
-        curl -Lo "$RUNNER_TEMP/specdown-bin/specdown$SPECDOWN_SUFFIX" "$SPECDOWN_URL"
-        chmod +x "$RUNNER_TEMP/specdown-bin/specdown"
-        echo "$GITHUB_WORKSPACE/target/assorted/bin" >> "$GITHUB_PATH"
+        curl -Lo "$RUNNER_TEMP/specdown-bin/specdown$BINARY_SUFFIX" "$SPECDOWN_URL"
+        chmod +x "$RUNNER_TEMP/specdown-bin/specdown$BINARY_SUFFIX"
+        echo "$RUNNER_TEMP/specdown-bin/" >> "$GITHUB_PATH"
       shell: bash
 branding:
   icon: check-circle
