@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
+  test-latest:
     strategy:
       matrix:
         os:
@@ -17,6 +17,21 @@ jobs:
     steps:
       - uses: actions/checkout@v2.3.5
       - uses: ./
+      - run: specdown --help
+
+  test-specific-version:
+    strategy:
+      matrix:
+        os:
+          - macos-latest
+          - windows-latest
+          - ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2.3.5
+      - uses: ./
+        with:
+          version: 0.55.5
       - run: specdown --help
 
   lint-markdown:
@@ -43,7 +58,8 @@ jobs:
   release:
     if: github.ref == 'refs/heads/main'
     needs:
-      - test
+      - test-specific-version
+      - test-latest
       - versio-plan
       - lint-markdown
     env:
