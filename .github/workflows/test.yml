@@ -102,11 +102,6 @@ jobs:
           lfs: true
           fetch-depth: 0
           ref: v${{ needs.release.outputs.current_version }}
-      - id: get_repository_name
-        name: Calculate repository name
-        run: echo ::set-output name=REPOSITORY_NAME::$(echo "$GITHUB_REPOSITORY" | awk
-          -F / '{print $2}' | sed -e "s/:refs//")
-        shell: bash
       - uses: dlavrenuek/conventional-changelog-action@v1.1.2
         id: changelog
         with:
