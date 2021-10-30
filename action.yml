@@ -5,11 +5,16 @@ inputs:
     description: Version of specdown to install
     required: false
     default: 'latest'
+outputs:
+  version:
+    description: The version on the path
+    value: ${{ steps.install.outputs.version }}
 
 runs:
   using: composite
   steps:
     - name: Install Specdown
+      id: install
       env:
         SPECDOWN_VERSION: ${{ inputs.version }}
       run: |
@@ -39,6 +44,7 @@ runs:
         curl -Lo "$RUNNER_TEMP/specdown-bin/specdown$BINARY_SUFFIX" "$SPECDOWN_URL"
         chmod +x "$RUNNER_TEMP/specdown-bin/specdown$BINARY_SUFFIX"
         echo "$RUNNER_TEMP/specdown-bin/" >> "$GITHUB_PATH"
+        echo ::set-output "name=version::$( "$RUNNER_TEMP/specdown-bin/specdown$BINARY_SUFFIX" --version | cut -d " " -f2 )"
       shell: bash
 branding:
   icon: check-circle
