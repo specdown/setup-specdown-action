@@ -6,3 +6,9 @@ updates:
     interval: daily
   commit-message:
     prefix: fix
+- package-ecosystem: github-actions
+  directory: /.github
+  schedule:
+    interval: daily
+  commit-message:
+    prefix: ci
