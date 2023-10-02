@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.2.10](https://github.com/specdown/specdown/compare/v0.2.9..v0.2.10) - 2023-10-02
+#### Bug Fixes
+- bump actions/checkout from 3 to 4 - ([814e3ff](https://github.com/specdown/specdown/commit/814e3ff488fc101e3923817110c259970710ba5c)) - dependabot[bot]
+#### Continuous Integration
+- Update mergify conditions - ([18de45a](https://github.com/specdown/specdown/commit/18de45ad6780ecbf6fc782e89c5e4ea95f512956)) - Tom Oram
+- Don't lint CHANGELOG.md - ([5c97324](https://github.com/specdown/specdown/commit/5c97324c4c82555c54b964d5aa679ea4dd370f32)) - Tom Oram
+
+- - -
+
 ## [v0.2.9](https://github.com/specdown/specdown/compare/v0.2.8..v0.2.9) - 2023-10-02
 #### Bug Fixes
 - Replace broken Versio with Cocogitto - ([1c2b73a](https://github.com/specdown/specdown/commit/1c2b73a1e7e493f7e5c5aa91bfdd551972355524)) - Tom Oram
