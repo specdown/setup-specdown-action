@@ -1,0 +1,21 @@
+queue_rules:
+  - name: default
+    conditions:
+      - status-success=test-specific-version
+      - status-success=test-latest
+      - status-success=check-conventional-commits
+      - status-success=lint-markdown
+
+pull_request_rules:
+  - name: automatic rebase for dependencies
+    conditions:
+      - status-success=test-specific-version
+      - status-success=test-latest
+      - status-success=check-conventional-commits
+      - status-success=lint-markdown
+      - base=main
+      - author=dependabot[bot]
+    actions:
+      queue:
+        method: merge
+        name: default
