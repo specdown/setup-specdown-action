@@ -39,6 +39,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: PurpleBooth/gfmfmt-action@v2.0.10
+        with:
+          pattern: ^(?!\./CHANGELOG).*\.md$
 
   check-conventional-commits:
     uses: armakuni/github-actions/.github/workflows/check-conventional-commits.yml@v0.14.4
