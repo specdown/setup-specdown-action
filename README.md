@@ -18,7 +18,7 @@ Setup Specdown in your github action
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: specdown/setup-specdown-action@v0.2.8
+    - uses: specdown/setup-specdown-action@0.2.9
     - run: specdown run README.md
 ```
 
