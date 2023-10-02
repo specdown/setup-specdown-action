@@ -1,17 +1,25 @@
 queue_rules:
   - name: default
     conditions:
-      - status-success=test-specific-version
-      - status-success=test-latest
-      - status-success=check-conventional-commits
+      - status-success=test-specific-version (macos-latest)
+      - status-success=test-specific-version (windows-latest)
+      - status-success=test-specific-version (ubuntu-latest)
+      - status-success=test-latest (macos-latest)
+      - status-success=test-latest (windows-latest)
+      - status-success=test-latest (ubuntu-latest)
+      - status-success=check-conventional-commits / check-conventional-commits
       - status-success=lint-markdown
 
 pull_request_rules:
   - name: automatic rebase for dependencies
     conditions:
-      - status-success=test-specific-version
-      - status-success=test-latest
-      - status-success=check-conventional-commits
+      - status-success=test-specific-version (macos-latest)
+      - status-success=test-specific-version (windows-latest)
+      - status-success=test-specific-version (ubuntu-latest)
+      - status-success=test-latest (macos-latest)
+      - status-success=test-latest (windows-latest)
+      - status-success=test-latest (ubuntu-latest)
+      - status-success=check-conventional-commits / check-conventional-commits
       - status-success=lint-markdown
       - base=main
       - author=dependabot[bot]
