@@ -1,0 +1,18 @@
+tag_prefix = "v"
+from_latest_tag = true
+ignore_merge_commits = true
+branch_whitelist = ["main"]
+pre_bump_hooks = [
+    "sed -i 's!specdown/setup-specdown-action@v.*$!specdown/setup-specdown-action@{{version}}!' README.md"
+]
+post_bump_hooks = [
+    "git push",
+    "git push origin v{{version}}",
+]
+
+[changelog]
+path = "CHANGELOG.md"
+template = "remote"
+remote = "github.com"
+repository = "specdown"
+owner = "specdown"
