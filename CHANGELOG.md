@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.2.11](https://github.com/specdown/specdown/compare/v0.2.10..v0.2.11) - 2023-10-02
+#### Bug Fixes
+- bump PurpleBooth/gfmfmt-action from 2.0.10 to 2.0.14 - ([6a62acd](https://github.com/specdown/specdown/commit/6a62acda6629d1e2968f052547650724180bdc63)) - dependabot[bot]
+
+- - -
+
 ## [v0.2.10](https://github.com/specdown/specdown/compare/v0.2.9..v0.2.10) - 2023-10-02
 #### Bug Fixes
 - bump actions/checkout from 3 to 4 - ([814e3ff](https://github.com/specdown/specdown/commit/814e3ff488fc101e3923817110c259970710ba5c)) - dependabot[bot]
