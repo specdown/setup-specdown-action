@@ -15,7 +15,7 @@ jobs:
           - ubuntu-latest
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ./
       - run: specdown --help
 
@@ -28,7 +28,7 @@ jobs:
           - ubuntu-latest
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ./
         with:
           version: 0.55.5
@@ -37,7 +37,7 @@ jobs:
   lint-markdown:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: PurpleBooth/gfmfmt-action@v2.0.10
         with:
           pattern: ^(?!\./CHANGELOG).*\.md$
