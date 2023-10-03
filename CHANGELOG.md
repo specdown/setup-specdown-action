@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.2.12](https://github.com/specdown/specdown/compare/v0.2.11..v0.2.12) - 2023-10-03
+#### Bug Fixes
+- bump armakuni/github-actions from 0.14.4 to 0.14.5 - ([98a3b9b](https://github.com/specdown/specdown/commit/98a3b9bd62a28ee79b66df0b7ea3a1a123dbb44c)) - dependabot[bot]
+
+- - -
+
 ## [v0.2.11](https://github.com/specdown/specdown/compare/v0.2.10..v0.2.11) - 2023-10-02
 #### Bug Fixes
 - bump PurpleBooth/gfmfmt-action from 2.0.10 to 2.0.14 - ([6a62acd](https://github.com/specdown/specdown/commit/6a62acda6629d1e2968f052547650724180bdc63)) - dependabot[bot]
