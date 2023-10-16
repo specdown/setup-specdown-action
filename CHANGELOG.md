@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [v0.2.21](https://github.com/specdown/specdown/compare/v0.2.20..v0.2.21) - 2023-10-16
+#### Bug Fixes
+- bump armakuni/github-actions from 0.16.5 to 0.16.6 - ([f340130](https://github.com/specdown/specdown/commit/f340130be110b23bfaee31ad8ba74eabfc9dffe4)) - dependabot[bot]
+
+- - -
+
 ## [v0.2.20](https://github.com/specdown/specdown/compare/v0.2.19..v0.2.20) - 2023-10-13
 #### Bug Fixes
 - bump armakuni/github-actions from 0.16.4 to 0.16.5 - ([8563edc](https://github.com/specdown/specdown/commit/8563edc6437d22011e242785b9f7ee971079ee15)) - dependabot[bot]
