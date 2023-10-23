@@ -43,7 +43,7 @@ jobs:
           pattern: ^(?!\./CHANGELOG).*\.md$
 
   check-conventional-commits:
-    uses: armakuni/github-actions/.github/workflows/check-conventional-commits.yml@v0.16.9
+    uses: armakuni/github-actions/.github/workflows/check-conventional-commits.yml@v0.18.1
 
   release:
     if: github.ref == 'refs/heads/main'
@@ -52,7 +52,7 @@ jobs:
       - test-latest
       - check-conventional-commits
       - lint-markdown
-    uses: armakuni/github-actions/.github/workflows/tag-and-release.yml@v0.16.9
+    uses: armakuni/github-actions/.github/workflows/tag-and-release.yml@v0.18.1
     with:
       download-artifacts: true
       release-artifacts: ./bins/*
