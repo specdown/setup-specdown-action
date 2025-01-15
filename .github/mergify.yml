@@ -1,18 +1,6 @@
 queue_rules:
   - name: default
-    conditions:
-      - status-success=test-specific-version (macos-latest)
-      - status-success=test-specific-version (windows-latest)
-      - status-success=test-specific-version (ubuntu-latest)
-      - status-success=test-latest (macos-latest)
-      - status-success=test-latest (windows-latest)
-      - status-success=test-latest (ubuntu-latest)
-      - status-success=check-conventional-commits / check-conventional-commits
-      - status-success=lint-markdown
-
-pull_request_rules:
-  - name: automatic rebase for dependencies
-    conditions:
+    queue_conditions:
       - status-success=test-specific-version (macos-latest)
       - status-success=test-specific-version (windows-latest)
       - status-success=test-specific-version (ubuntu-latest)
@@ -23,7 +11,19 @@ pull_request_rules:
       - status-success=lint-markdown
       - base=main
       - author=dependabot[bot]
+    merge_conditions:
+      - status-success=test-specific-version (macos-latest)
+      - status-success=test-specific-version (windows-latest)
+      - status-success=test-specific-version (ubuntu-latest)
+      - status-success=test-latest (macos-latest)
+      - status-success=test-latest (windows-latest)
+      - status-success=test-latest (ubuntu-latest)
+      - status-success=check-conventional-commits / check-conventional-commits
+      - status-success=lint-markdown
+    merge_method: merge
+
+pull_request_rules:
+  - name: automatic rebase for dependencies
+    conditions: []
     actions:
       queue:
-        method: merge
-        name: default
