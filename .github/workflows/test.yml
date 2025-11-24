@@ -52,7 +52,7 @@ jobs:
       - test-latest
       - check-conventional-commits
       - lint-markdown
-    uses: armakuni/github-actions/.github/workflows/tag-and-release.yml@v0.19.6
+    uses: armakuni/github-actions/.github/workflows/tag-and-release.yml@v0.19.11
     with:
       download-artifacts: true
       release-artifacts: ./bins/*
